@@ -1,0 +1,14 @@
+The project consists of users registering, logging in, creating multiple pets with pet data stored such as weight, allergies, birthday, medications etc. I'd also like to include the ability to create reminders for medication administration or vaccinations due and store scheduled appointments with pushed reminders for those appointments a week before hand.
+
+I want to use React.
+
+It's going to feature CRUD.
+
+Create Pet, Update Pet info, Delete Pet. 
+
+Create appointments, check off appointments.
+
+Create reminders, check off reminders. 
+
+https://github.com/louyecats/pawPortalApp
+
