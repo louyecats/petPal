@@ -12,7 +12,7 @@ const Header = ({user, setUser, setLogged}) => {
         //print logged in user
         console.log("logged user" + JSON.stringify(res.data))
         //set logged in user in  state
-        setUser(res.data.email);
+        setUser(res.data._id);
       })
       .catch(err => {
         console.log('currentuser error', err)
@@ -37,7 +37,7 @@ const Header = ({user, setUser, setLogged}) => {
     <div className="mt-5 p-3 row">
         {/* check if user in state w/ value present, if not make value null */}
         {/* {(user)} */}
-        <h1 className="col offset-1 display-2">All Paw Records <img src={pawicon} className="App-logo" alt="icon"/></h1>
+        <h1 className="col offset-1 display-2">Pet Pal <img src={pawicon} className="App-logo" alt="icon"/></h1>
         {/* if logged in user in state, show logout */}
         {(user) ?
           <button className="btn btn-danger m-4 col-1" onClick={logoutHandler}>Logout</button>

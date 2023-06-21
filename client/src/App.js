@@ -49,7 +49,7 @@ function App() {
             <Route path="/viewPet/:id" element={<ViewOnePet pet={pet} setPet={setPet} user={user} setUser={setUser}/>}/>
             <Route path="/editPet/:id" element={<UpdatePet pet={pet} setPet={setPet} user={user}/>}/>
             <Route path="/appointments" element={<AppointmentsMain pet={pet} setPet={setPet} pets={pets} setPets={setPets} user={user}/>}/>
-            <Route path="/reminders" element={<RemindersMain pet={pet} setPet={setPet} pets={pets} setPets={setPets} user={user} setUser={setUser}/>}/>
+            <Route path="/reminders" element={<RemindersMain pet={pet} setPet={setPet} pets={pets} setPets={setPets} user={user}/>}/>
           </Routes>
         </BrowserRouter>
       </main>

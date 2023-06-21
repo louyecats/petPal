@@ -6,7 +6,7 @@ const secret = process.env.SECRET_KEY;
 //refer to web token - package we installed 
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const util = require('util');
+
 
 
 module.exports = {
@@ -77,30 +77,18 @@ module.exports = {
             .then(e => res.json(e))
             .catch(e => res.status(400).json({ message: 'problem finding obj by user', error: e }))
     },
-    //add appt
+    //add appt obj to pet appt array
     addAppointment: (req, res) => {
-        console.log("req.body add appt", req.body)
+        //console.log("req.body add appt", req.body)
         Pet.updateOne(
             { _id: req.params.id },
-            {
-                $push: { appointments: req.body }
-            }
+            {$push: { appointments: req.body }}
         )
             .then(updatedAppt => res.json(updatedAppt))
             .catch(err =>
                 res.status(400).json(err))
     },
-    deleteApptObj: (req, res) => {
-        Pet.deleteOne({ _id: req.params.id })
-            .then((result) => res.json({ result: result }))
-            .catch((err) =>
-                res.json({
-                    message: "Something went wrong. Can't DELETE a list",
-                    error: err,
-                })
-            );
-    },
-    // Method to delete an appointment from a pet's appointments array
+    // delete appt obj from a pet's appt array
     deleteAppointment: async function (req, res) {
         const petId = req.params.petId;
         const appointmentId = req.params.appointmentId;

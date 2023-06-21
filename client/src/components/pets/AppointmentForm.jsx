@@ -13,10 +13,10 @@ const AppointmentForm = ({ user, pet, pets, setPets}) => {
 
   // useEffect to get all pets from currentUser to select which pet id on form
   useEffect(() => {
-    axios.get('http://localhost:8000/api/pets', { withCredentials: true })
+    axios.get('http://localhost:8000/api/appts', { withCredentials: true })
       //the response is an array of objects that we will set in state
       .then(res => {
-        setPets(res.data.pets)
+        setPets(res.data)
       })
       .catch(err => console.log(err))
   }, []);
@@ -82,7 +82,7 @@ const AppointmentForm = ({ user, pet, pets, setPets}) => {
       </div>
 
       <form action="" onSubmit={submitHandler} className="row p-4">
-        {/* {errors.map((err, index) => <p className="text-danger" key={index}>{err}</p>)} */}
+        {errors.map((err, index) => <p className="text-danger" key={index}>{err}</p>)}
         <div className="form-group">
           <label htmlFor="apptDateTime" className="fw-bolder">Date and Time:</label>
           <input type="datetime-local" name="apptDateTime" id="apptDateTime" onChange={apptHandler} className="form-control" />

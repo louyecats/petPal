@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import sponsor1 from './images/sponsor1.jpg'
+import sponsor2 from './images/sponsor2.webp'
+import sponsor3 from './images/sponsor3.jpeg'
 
 const PetForm = ({pet, setPet, user}) => {
 	const navigate = useNavigate();
@@ -21,7 +24,7 @@ const PetForm = ({pet, setPet, user}) => {
             navigate('/home')
         // if user logged in, continue
         } else {
-            console.log('logged in')
+            console.log('logged in', user._id)
             // send form data combined with calculated age
             axios.post('http://localhost:8000/api/pet', {...pet, age:Math.abs(new Date (Date.now() - new Date(pet.birthday)).getUTCFullYear() - 1970)}, {withCredentials:true})
                 .then(res => {
@@ -88,8 +91,13 @@ const PetForm = ({pet, setPet, user}) => {
                 </form>
             </div>
 
-            <div className="col bg-light p-5 m-5 rounded">
-            <h2 className="row-1">Our Sponsors:</h2>
+            <div className="col bg-light p-5 m-5 rounded mx-auto">
+            <h2 className="row-1 mb-5">Our Sponsors:</h2>
+            <div className="col">
+                <img src={sponsor1} className="sponsor" alt="icon"/>
+                <img src={sponsor2} className="sponsor" alt="icon"/>
+                <img src={sponsor3} className="sponsor" alt="icon"/>
+            </div>
             </div>
         </div>
     )

@@ -63,10 +63,12 @@ const PetSchema = new mongoose.Schema({
         default: "None yet!"
 
     },
-    reminders: {
-        type: Array,
-        required: [false]
-    },
+    reminders: [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Reminder'
+        }
+    ],
     appointments: [
         {
             apptDateTime: {
@@ -98,5 +100,12 @@ module.exports = Pet;
 createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+}
+*/
+
+/* REMINDER JOIN
+createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Reminder',
 }
 */

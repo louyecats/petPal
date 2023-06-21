@@ -26,7 +26,7 @@ const RegisterForm = ({setUser}) => {
         axios.post("http://localhost:8000/api/register", userInfo, {withCredentials:true})
             .then (res => {
                 console.log("new registered user", res.data)
-                setUser(res.data.email) //put loggedUser in state
+                setUser(res.data._id) //put loggedUser in state
                 navigate("/createPet") //navigate to pet dashboard
             })
             .catch(err => {

@@ -10,6 +10,10 @@ body {
   height:40px;
 }
 
+.sponsor {
+  width: 200px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

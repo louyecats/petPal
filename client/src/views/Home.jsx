@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import pug from '../views/pug.webp'
 
 const Home = ({user, setUser}) => {
 
@@ -35,7 +36,8 @@ const Home = ({user, setUser}) => {
                 <div className="p-3 bg-white col-8 m-3 rounded">
                     <div className="row">
                         <div className="col col-4 bg-light p-3 m-1 rounded">
-                            <h3>Notes:</h3>
+                            <img src={pug} className="sponsor" alt="icon"/>
+                            <h3 className="mt-5" >Notes:</h3>
                             <ul className="bg-white rounded p-4 m-3">
                                 <li>Vet said a cone is not needed unless Pugsley starts scratching his eyes</li>
                             </ul>

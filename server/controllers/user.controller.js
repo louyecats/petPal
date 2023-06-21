@@ -70,11 +70,11 @@ module.exports = {
 
     //logged in user
     loggedUser: async (req, res) =>{
-        console.log("I'm here!")
+        // console.log("I'm here!")
         try {
-            console.log(req.cookies.usertoken)
+            // console.log(req.cookies.usertoken)
             const user = jwt.verify(req.cookies.usertoken, secret);
-            console.log("user", user)
+            //console.log("user", user)
             // const currentUser = await Model.findOne({_id: user._id});
             // console.log("loggedUser", currentUser);
             res.json(user);
